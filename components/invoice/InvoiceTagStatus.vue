@@ -19,13 +19,13 @@ export default {
       let style = ''
       switch (this.status) {
         case 'Paid':
-          style = 'text-success-primary bg-success-secondary'
+          style = 'text-white bg-success-primary dark:text-success-primary dark:bg-success-secondary'
           break
         case 'Pending':
-          style = 'text-warning-primary bg-warning-secondary'
+          style = 'text-white bg-warning-primary dark:text-warning-primary dark:bg-warning-secondary'
           break
         case 'Draft':
-          style = 'text-white bg-black-tertiary'
+          style = 'text-white bg-gray-400 dark:bg-black-tertiary'
           break
         default:
           break

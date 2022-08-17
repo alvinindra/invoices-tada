@@ -6,14 +6,14 @@
           <div class="dark:text-gray-300 text-sm mb-2">
             Invoice Number
           </div>
-          <div class="font-medium text-xl text-white">
+          <div class="font-medium text-xl dark:text-white">
             <span class="text-primary-300">#</span>RT3080
           </div>
         </div>
         <div class="dark:text-gray-300 text-sm mb-2">
           Due Date
         </div>
-        <div class="text-sm text-white">
+        <div class="text-sm dark:text-white">
           Due 21 Aug 2021
         </div>
       </div>

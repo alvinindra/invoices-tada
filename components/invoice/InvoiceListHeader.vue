@@ -37,14 +37,11 @@ export default {
     ...mapState('invoice', ['invoices'])
   },
   methods: {
-    ...mapMutations(['SET_MODAL']),
+    ...mapMutations(['SET_MODAL', 'SET_MODAL_TYPE']),
     showModalAdd () {
       this.SET_MODAL(true)
+      this.SET_MODAL_TYPE('add')
       document.body.classList.add('modal-open')
-    },
-    hideModalAdd () {
-      this.SET_MODAL(false)
-      document.body.classList.remove('modal-open')
     }
   }
 }

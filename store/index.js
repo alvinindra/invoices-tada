@@ -1,6 +1,7 @@
 export const state = () => ({
   dark: true,
-  openModal: false
+  openModal: false,
+  modalType: 'add'
 })
 
 export const mutations = {
@@ -9,6 +10,9 @@ export const mutations = {
   },
   SET_MODAL (state, bool) {
     state.openModal = bool
+  },
+  SET_MODAL_TYPE (state, type) {
+    state.modalType = type
   }
 }
 

@@ -1,9 +1,14 @@
 <template>
-  <div class="min-h-screen min-w-full bg-black-secondary bg-opacity-80 fixed flex md:top-0 top-16 md:left-24 left-0">
+  <div class="min-h-screen min-w-full bg-black-secondary bg-opacity-80 fixed flex md:top-0 top-16 md:left-24 left-0 bottom-0">
     <div class="relative p-5 md:px-9 md:py-10 md:w-md sm:w-[616px] w-full min-h-screen md:rounded-r-2xl bg-gray-100 dark:bg-black-secondary">
       <form class="overflow-y-auto">
         <div class="dark:text-white text-2xl font-bold mb-10 px-4">
-          Add New Invoice
+          <template v-if="modalType === 'add'">
+            Add New Invoice
+          </template>
+          <template v-else>
+            Edit <span class="text-gray-400">#</span>XM9141
+          </template>
         </div>
         <div class="form-body">
           <!-- Bill From -->
@@ -188,6 +193,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['modalType']),
     ...mapState('invoice', ['invoices']),
     ...mapGetters(['dark'])
   },
