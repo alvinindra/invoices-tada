@@ -5,7 +5,7 @@
     "name": "Jensen Huang",
     "amount": "1800.90",
     "status": "Paid",
-    "terms": "30",
+    "payment_terms": "30",
     "project_description": "Graphic Designer",
     "list_items": [{
       "name": "Banner Design",
@@ -43,7 +43,7 @@
     "name": "Alex Grim",
     "amount": "556.00",
     "status": "Pending",
-    "terms": "30",
+    "payment_terms": "30",
     "project_description": "Graphic Designer",
     "list_items": [{
       "name": "Banner Design",
@@ -76,7 +76,7 @@
     "name": "John Morrison",
     "amount": "14002.33",
     "status": "Paid",
-    "terms": "30",
+    "payment_terms": "30",
     "project_description": "Graphic Designer",
     "list_items": [{
       "name": "Banner Design",
@@ -109,7 +109,7 @@
     "name": "Alysa Werner",
     "amount": "102.04",
     "status": "Pending",
-    "terms": "30",
+    "payment_terms": "30",
     "project_description": "Graphic Designer",
     "list_items": [{
       "name": "Banner Design",
@@ -142,7 +142,7 @@
     "name": "Mellisa Clarke",
     "amount": "4032.33",
     "status": "Pending",
-    "terms": "90",
+    "payment_terms": "90",
     "project_description": "Graphic Designer",
     "list_items": [{
       "name": "Banner Design",
@@ -175,7 +175,7 @@
     "name": "Thomas Wayne",
     "amount": "6155.91",
     "status": "Pending",
-    "terms": "90",
+    "payment_terms": "90",
     "project_description": "Graphic Designer",
     "list_items": [{
       "name": "Banner Design",
@@ -208,7 +208,7 @@
     "name": "Anita Wainwright",
     "amount": "3102.04",
     "status": "Draft",
-    "terms": "90",
+    "payment_terms": "90",
     "project_description": "Graphic Designer",
     "list_items": [{
       "name": "Banner Design",

@@ -2,7 +2,7 @@
   <div
     v-if="invoice"
     class="flex flex-row mb-4 items-center py-4 px-5 text-sm rounded-lg justify-between
-  bg-white dark:bg-black-primary dark:text-white text-center cursor-pointer
+  bg-white dark:bg-black-primary dark:text-white text-center cursor-pointer transition
     w-full border-2 border-transparent hover:border-2 hover:border-primary-400 hover:dark:border-gray-400"
     @click="goToInvoice(invoice.invoice_number)"
   >

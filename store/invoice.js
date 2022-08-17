@@ -15,7 +15,6 @@ export const actions = {
     const invoicesData = JSON.stringify(invoicesDataJson)
     const invoicesLocalStorage =
       JSON.parse(localStorage.getItem('invoices')) || null
-    console.log(invoicesLocalStorage)
     if (invoicesLocalStorage === null) {
       localStorage.setItem('invoices', invoicesData)
       commit('SET_INVOICES', invoicesData)

@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="ml-8">
-        <BaseButton prefix>
+        <BaseButton prefix @click="showModalAdd">
           <div class="flex">
             <div class="flex items-center justify-center bg-white rounded-full w-8 h-8 mr-4">
               <fa :icon="[ 'fas', 'plus' ]" class="text-primary-400 my-auto" />
@@ -30,11 +30,22 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 
 export default {
   computed: {
     ...mapState('invoice', ['invoices'])
+  },
+  methods: {
+    ...mapMutations(['SET_MODAL']),
+    showModalAdd () {
+      this.SET_MODAL(true)
+      document.body.classList.add('modal-open')
+    },
+    hideModalAdd () {
+      this.SET_MODAL(false)
+      document.body.classList.remove('modal-open')
+    }
   }
 }
 </script>

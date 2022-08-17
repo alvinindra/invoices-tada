@@ -6,3 +6,32 @@ html,
 body {
   font-family: "Outfit", sans-serif;
 }
+
+body.modal-open {
+  overflow: hidden;
+}
+
+// Transition
+.slide-left-right-enter-active {
+  transition: all 0.3s linear;
+}
+.slide-left-right-leave-active {
+  transition: all 0.3s linear;
+}
+.slide-left-right-enter,
+.slide-left-right-leave-to {
+  transform: translateX(-200px);
+  opacity: 0;
+}
+
+.slide-top-bottom-enter-active {
+  transition: all 0.3s linear;
+}
+.slide-top-bottom-leave-active {
+  transition: all 0.3s linear;
+}
+.slide-top-bottom-enter,
+.slide-top-bottom-leave-to {
+  transform: translateY(-30px);
+  opacity: 0;
+}
