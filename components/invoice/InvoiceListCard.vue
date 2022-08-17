@@ -4,6 +4,7 @@
     class="flex flex-row mb-4 items-center py-4 px-5 text-sm rounded-lg justify-between
   bg-white dark:bg-black-primary dark:text-white text-center cursor-pointer
     w-full border-2 border-transparent hover:border-2 hover:border-primary-400 hover:dark:border-gray-400"
+    @click="goToInvoice(invoice.invoice_number)"
   >
     <div class="px-2 text-left flex-initial font-medium min-w-[100px]">
       <span class="text-primary-300">#</span>{{ invoice.invoice_number }}
@@ -43,6 +44,9 @@ export default {
     },
     formatAmount (amount) {
       return new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(amount).replace(/^(\D+)/, '$1 ')
+    },
+    goToInvoice (invoiceNumber) {
+      this.$router.push(`/invoice/${invoiceNumber}`)
     }
   }
 }

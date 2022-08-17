@@ -3,7 +3,7 @@
     <svg
       v-if="dark"
       xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
+      class="h-6 w-6 hover:fill-white"
       viewBox="0 0 20 20"
       fill="#8D8BBC"
     >
@@ -16,7 +16,7 @@
     <svg
       v-else
       xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
+      class="h-6 w-6 hover:fill-primary-300"
       viewBox="0 0 20 20"
       fill="#1f2138"
     >

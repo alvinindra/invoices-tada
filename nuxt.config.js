@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'takehometest-tada',
+    title: 'Invoices TADA',
     htmlAttrs: {
       lang: 'en'
     },
@@ -54,7 +54,7 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/dayjs'],
+  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}

@@ -19,11 +19,15 @@ module.exports = {
       white: colors.white,
       gray: colors.gray,
       green: colors.green,
+      red: colors.red,
       success: {
         primary: '#2ddb98',
         secondary: '#1d2c3f'
       },
-      danger: '#3f1d24',
+      danger: {
+        primary: '#DD4446',
+        secondary: '#3f1d24'
+      },
       warning: {
         primary: '#fe9100',
         secondary: '#2d2733',

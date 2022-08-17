@@ -6,8 +6,9 @@
     :class="[
       'p-3 rounded-[50px] font-medium outline-none focus:outline-none',
       { 'bg-primary-400 text-white hover:bg-primary-300': primary },
-      { 'bg-green-500 text-white hover:bg-green-600': success },
-      { 'bg-red-600 text-white': error },
+      { 'bg-black-tertiary text-white hover:bg-black-tertiary/80 dark:hover:bg-black-tertiary/60': secondary },
+      { 'bg-danger-primary hover:bg-red-600 text-white': danger },
+      { '!px-6': wide },
       { '!pr-4': prefix },
       { '!pl-4': suffix },
     ]"
@@ -32,6 +33,10 @@ export default {
       type: String,
       default: 'primary'
     },
+    wide: {
+      type: Boolean,
+      default: false
+    },
     prefix: {
       type: Boolean,
       default: false
@@ -46,11 +51,11 @@ export default {
     primary () {
       return this.color === 'primary'
     },
-    success () {
-      return this.color === 'success'
+    secondary () {
+      return this.color === 'secondary'
     },
-    error () {
-      return this.color === 'error'
+    danger () {
+      return this.color === 'danger'
     }
   }
 }
