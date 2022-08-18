@@ -1,5 +1,5 @@
 <template>
-  <div v-if="invoice" class="bg-white dark:bg-black-primary rounded-lg py-8 px-12">
+  <div v-if="invoice" class="bg-white dark:bg-black-primary rounded-lg py-8 px-4 sm:px-8 md:px-12">
     <div class="flex mb-4">
       <div class="my-auto">
         <div class="mb-2">
@@ -24,8 +24,8 @@
         <div>{{ invoice.bill_from?.country }}</div>
       </div>
     </div>
-    <div class="flex text-sm justify-between items-center mb-4">
-      <div class="flex-1 pr-8">
+    <div class="flex flex-col md:flex-row text-sm justify-between items-start md:items-center mb-4">
+      <div class="flex-1 mb-4 md:mb-0 pr-8">
         <div class="dark:text-gray-300 mb-3">
           Full Name
         </div>
@@ -33,7 +33,7 @@
           {{ invoice.name }}
         </div>
       </div>
-      <div class="flex-1 pr-8">
+      <div class="flex-1 mb-4 md:mb-0 pr-8">
         <div class="dark:text-gray-300 mb-3">
           Amount
         </div>
@@ -41,7 +41,7 @@
           {{ formatAmount(invoice.amount) }}
         </div>
       </div>
-      <div class="flex-1 pr-8">
+      <div class="flex-1 mb-4 md:mb-0 pr-8">
         <div class="dark:text-gray-300 mb-3">
           Sent to
         </div>

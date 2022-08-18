@@ -1,21 +1,21 @@
 <template>
-  <div class="flex bg-white dark:bg-black-primary rounded-lg py-5 px-8 mb-6">
-    <div class="dark:text-white my-auto">
+  <div class="flex flex-col md:flex-row bg-white dark:bg-black-primary rounded-lg py-5 px-4 sm:px-8 mb-6">
+    <div class="dark:text-white my-auto mb-6 md:mb-0">
       <div class="flex dark:text-gray-300 text-sm">
         <div class="my-auto mr-2">
           Status:
         </div>
-        <InvoiceTagStatus class="!px-4" :status="invoice?.status" />
+        <InvoiceTagStatus class="!px-4 ml-auto md:ml-0 max-w-fit md:w-auto" :status="invoice?.status" />
       </div>
     </div>
-    <div v-if="invoice" class="grid grid-flow-col gap-2 ml-auto">
-      <BaseButton color="secondary" wide @click="showModalEdit">
+    <div v-if="invoice" class="grid grid-flow-col grid-cols-2 md:grid-cols-none gap-2 justify-between md:ml-auto">
+      <BaseButton class="px-4 md:px-3" color="secondary" wide @click="showModalEdit">
         Edit
       </BaseButton>
-      <BaseButton color="danger" wide @click="handleDeleteInvoice">
+      <BaseButton class="px-4 md:px-3" color="danger" wide @click="handleDeleteInvoice">
         Delete
       </BaseButton>
-      <BaseButton v-if="invoice.status !== 'Paid'" color="primary" wide @click="handleUpdateStatus">
+      <BaseButton v-if="invoice.status !== 'Paid'" class="px-4 md:px-3" color="primary" wide @click="handleUpdateStatus">
         Mark as {{ invoice.status === 'Pending' ? 'Paid' : 'Pending' }}
       </BaseButton>
     </div>

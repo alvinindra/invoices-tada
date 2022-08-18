@@ -9,7 +9,7 @@
     <div class="hidden md:block px-2 text-left flex-initial font-medium min-w-[100px]">
       <span class="text-primary-300">#</span>{{ invoice.invoice_number }}
     </div>
-    <div class="flex md:hidden">
+    <div class="flex md:hidden mb-6">
       <div class="font-medium">
         <span class="text-primary-300">#</span>{{ invoice.invoice_number }}
       </div>
@@ -19,16 +19,27 @@
         </div>
       </div>
     </div>
-    <div class="px-2 text-left flex-1 dark:text-gray-300">
+    <div class="hidden md:block px-2 text-left flex-1 dark:text-gray-300">
       Due {{ formatDate(invoice.due_date) }}
     </div>
     <div class="hidden md:block px-2 text-left whitespace-nowrap flex-1 dark:text-gray-300">
       {{ invoice.name }}
     </div>
-    <div class="pl-2 pr-6 text-right flex-1 font-medium text-lg">
+    <div class="hidden md:block pl-2 pr-6 text-right flex-1 font-medium text-lg">
       {{ formatAmount(invoice.amount) }}
     </div>
-    <InvoiceTagStatus class="ml-auto" :status="invoice.status" />
+    <InvoiceTagStatus class="hidden md:block ml-auto" :status="invoice.status" />
+    <div class="flex md:hidden">
+      <div class="flex flex-col flex-[1_1_50%]">
+        <div class="text-left dark:text-gray-300">
+          Due {{ formatDate(invoice.due_date) }}
+        </div>
+        <div class="text-left font-medium text-lg">
+          {{ formatAmount(invoice.amount) }}
+        </div>
+      </div>
+      <InvoiceTagStatus class="ml-auto" :status="invoice.status" />
+    </div>
     <div class="hidden md:block flex-none text-primary-300 ml-4">
       <fa :icon="['fas','chevron-right']" size="sm" />
     </div>

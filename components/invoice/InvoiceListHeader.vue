@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row">
     <div class="my-auto">
-      <div class="dark:text-white font-medium tracking-wide text-xl md:text-3xl mb-2 md:mb-4">
+      <div class="dark:text-white font-medium tracking-wide text-xl md:text-3xl mb-0 sm:mb-2 md:mb-4">
         Invoices
       </div>
       <div class="flex dark:text-gray-300 text-sm">
@@ -30,7 +30,7 @@
       <div class="ml-4 md:ml-8">
         <BaseButton prefix @click="showModalAdd">
           <div class="flex">
-            <div class="flex items-center justify-center bg-white rounded-full w-8 h-8 mr-4">
+            <div class="flex items-center justify-center bg-white rounded-full w-8 h-8 mr-2 sm:mr-4">
               <fa :icon="[ 'fas', 'plus' ]" class="text-primary-400 my-auto" />
             </div>
             <span class="my-auto flex">New&nbsp;<span class="hidden md:block">Invoice</span></span>

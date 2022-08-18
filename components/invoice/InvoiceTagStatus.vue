@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-1 justify-center px-2 py-2 font-medium rounded-md w-full text-center" :class="statusStyle">
+  <div class="flex flex-1 justify-center px-2 py-3 h-fit font-medium rounded-md md:w-full text-center" :class="statusStyle">
     <fa class="my-auto mr-2" :icon="['fas', 'circle']" style="font-size: 8px" />
     <span class="my-auto">{{ status }}</span>
   </div>
