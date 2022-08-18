@@ -1,12 +1,20 @@
 import invoicesDataJson from '@/data/invoices.json'
 
 export const state = () => ({
-  invoices: []
+  invoices: [],
+  invoice: {}
 })
 
 export const mutations = {
   SET_INVOICES (state, payload) {
     state.invoices = [...payload]
+  },
+  SET_DETAIL_INVOICE (state, payload) {
+    const detailInvoice = state.invoices.find(
+      invoice => invoice.invoice_number === payload
+    )
+
+    state.invoice = { ...detailInvoice }
   }
 }
 

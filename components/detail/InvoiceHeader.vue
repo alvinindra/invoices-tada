@@ -5,7 +5,7 @@
         <div class="my-auto mr-2">
           Status:
         </div>
-        <InvoiceTagStatus class="!px-4" status="Pending" />
+        <InvoiceTagStatus class="!px-4" :status="invoice?.status" />
       </div>
     </div>
     <div class="grid grid-flow-col gap-2 ml-auto">
@@ -27,7 +27,7 @@ import { mapMutations, mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState('invoice', ['invoices'])
+    ...mapState('invoice', ['invoice'])
   },
   methods: {
     ...mapMutations(['SET_MODAL', 'SET_MODAL_TYPE']),

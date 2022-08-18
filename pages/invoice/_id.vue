@@ -9,11 +9,24 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapActions, mapMutations, mapState } from 'vuex'
 
 export default {
+  data () {
+    return {
+      invoiceNumber: this.$route.params.id || ''
+    }
+  },
   computed: {
     ...mapState(['openModal'])
+  },
+  mounted () {
+    this.setInvoices()
+    this.SET_DETAIL_INVOICE(this.invoiceNumber)
+  },
+  methods: {
+    ...mapActions('invoice', ['setInvoices']),
+    ...mapMutations('invoice', ['SET_DETAIL_INVOICE'])
   }
 }
 </script>

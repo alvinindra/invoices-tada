@@ -8,12 +8,22 @@
         There are {{ invoices.length }} total invoices
       </div>
     </div>
-    <div class="my-auto ml-auto flex text-white">
+    <div class="my-auto ml-auto flex">
       <div class="flex font-semibold my-auto text-sm">
-        <span class="my-auto dark:text-white text-black-primary">Filter by status</span>
-        <div class="my-auto text-primary-300 font-extrabold ml-4">
-          <fa :icon="['fas','chevron-down']" size="sm" />
-        </div>
+        <select
+          v-model="selectedFilter"
+          class="py-2 my-auto cursor-pointer bg-gray-100 dark:bg-black-secondary
+          text-black-primary dark:text-white text-sm pr-4
+          hover:outline rounded"
+          @change="handleFilter"
+        >
+          <option value="" selected>
+            Filter by status
+          </option>
+          <option v-for="(option, index) in filterByStatusData" :key="index" :value="option.value">
+            {{ option.label }}
+          </option>
+        </select>
       </div>
       <div class="ml-8">
         <BaseButton prefix @click="showModalAdd">
@@ -33,6 +43,25 @@
 import { mapMutations, mapState } from 'vuex'
 
 export default {
+  data () {
+    return {
+      selectedFilter: this.$route.query.status || '',
+      filterByStatusData: [
+        {
+          value: 'Paid',
+          label: 'Paid'
+        },
+        {
+          value: 'Pending',
+          label: 'Pending'
+        },
+        {
+          value: 'Draft',
+          label: 'Draft'
+        }
+      ]
+    }
+  },
   computed: {
     ...mapState('invoice', ['invoices'])
   },
@@ -42,6 +71,13 @@ export default {
       this.SET_MODAL(true)
       this.SET_MODAL_TYPE('add')
       document.body.classList.add('modal-open')
+    },
+    handleFilter () {
+      this.$router.push({
+        query: {
+          status: this.selectedFilter
+        }
+      })
     }
   }
 }

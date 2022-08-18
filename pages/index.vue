@@ -8,12 +8,18 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'HomePage',
   computed: {
     ...mapState(['openModal'])
+  },
+  mounted () {
+    this.setInvoices()
+  },
+  methods: {
+    ...mapActions('invoice', ['setInvoices'])
   }
 }
 </script>

@@ -24,14 +24,9 @@ body.modal-open {
   opacity: 0;
 }
 
-.slide-top-bottom-enter-active {
-  transition: all 0.3s linear;
-}
-.slide-top-bottom-leave-active {
-  transition: all 0.3s linear;
-}
-.slide-top-bottom-enter,
-.slide-top-bottom-leave-to {
-  transform: translateY(-30px);
-  opacity: 0;
+// Error Page
+.__nuxt-error-page .error {
+  svg {
+    margin: 0 auto;
+  }
 }
