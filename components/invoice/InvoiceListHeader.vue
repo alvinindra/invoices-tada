@@ -1,11 +1,12 @@
 <template>
   <div class="flex flex-row">
     <div class="my-auto">
-      <div class="dark:text-white font-medium tracking-wide text-3xl mb-4">
+      <div class="dark:text-white font-medium tracking-wide text-xl md:text-3xl mb-2 md:mb-4">
         Invoices
       </div>
-      <div class="dark:text-gray-300 text-sm">
-        There are {{ invoices.length }} total invoices
+      <div class="flex dark:text-gray-300 text-sm">
+        <span class="hidden md:block">There are</span>&nbsp;{{ invoices.length }}
+        <span class="hidden md:block">&nbsp;total&nbsp;</span> invoices
       </div>
     </div>
     <div class="my-auto ml-auto flex">
@@ -17,21 +18,22 @@
           hover:outline rounded"
           @change="handleFilter"
         >
-          <option value="" selected>
-            Filter by status
+          <option class="text-sm" value="" selected>
+            <span v-if="windowWidth < 768">Filter</span>
+            <span v-else>Filter by Status</span>
           </option>
-          <option v-for="(option, index) in filterByStatusData" :key="index" :value="option.value">
+          <option v-for="(option, index) in filterByStatusData" :key="index" class="text-sm" :value="option.value">
             {{ option.label }}
           </option>
         </select>
       </div>
-      <div class="ml-8">
+      <div class="ml-4 md:ml-8">
         <BaseButton prefix @click="showModalAdd">
           <div class="flex">
             <div class="flex items-center justify-center bg-white rounded-full w-8 h-8 mr-4">
               <fa :icon="[ 'fas', 'plus' ]" class="text-primary-400 my-auto" />
             </div>
-            <span class="my-auto">New Invoice</span>
+            <span class="my-auto flex">New&nbsp;<span class="hidden md:block">Invoice</span></span>
           </div>
         </BaseButton>
       </div>
@@ -45,6 +47,7 @@ import { mapMutations, mapState } from 'vuex'
 export default {
   data () {
     return {
+      windowWidth: process.browser ? window.innerWidth : 0,
       selectedFilter: this.$route.query.status || '',
       filterByStatusData: [
         {
@@ -65,8 +68,19 @@ export default {
   computed: {
     ...mapState('invoice', ['invoices'])
   },
+  mounted () {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
+  },
   methods: {
     ...mapMutations(['SET_MODAL', 'SET_MODAL_TYPE']),
+    onResize () {
+      this.windowWidth = window.innerWidth
+    },
     showModalAdd () {
       this.SET_MODAL(true)
       this.SET_MODAL_TYPE('add')

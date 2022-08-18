@@ -10,18 +10,15 @@
     "list_items": [{
       "name": "Banner Design",
       "qty": 1,
-      "price": "200.90",
-      "total": "200.90"
+      "price": "200.90"
     },{
       "name": "Email Design",
       "qty": 2,
-      "price": "200.00",
-      "total": "400.00"
+      "price": "200.00"
     },{
       "name": "Letter Design",
       "qty": 6,
-      "price": "200.00",
-      "total": "1200.00"
+      "price": "200.00"
     }],
     "bill_from": {
       "street_address": "20 City Park",
@@ -48,13 +45,11 @@
     "list_items": [{
       "name": "Banner Design",
       "qty": 1,
-      "price": "156.00",
-      "total": "156.00"
+      "price": "156.00"
     },{
       "name": "Email Design",
       "qty": 2,
-      "price": "200.00",
-      "total": "400.00"
+      "price": "200.00"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
@@ -81,13 +76,11 @@
     "list_items": [{
       "name": "Banner Design",
       "qty": 1,
-      "price": "156.00",
-      "total": "156.00"
+      "price": "156.00"
     },{
       "name": "Email Design",
       "qty": 2,
-      "price": "200.00",
-      "total": "400.00"
+      "price": "200.00"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
@@ -114,13 +107,11 @@
     "list_items": [{
       "name": "Banner Design",
       "qty": 1,
-      "price": "156.00",
-      "total": "156.00"
+      "price": "156.00"
     },{
       "name": "Email Design",
       "qty": 2,
-      "price": "200.00",
-      "total": "400.00"
+      "price": "200.00"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
@@ -147,13 +138,11 @@
     "list_items": [{
       "name": "Banner Design",
       "qty": 1,
-      "price": "156.00",
-      "total": "156.00"
+      "price": "156.00"
     },{
       "name": "Email Design",
       "qty": 2,
-      "price": "200.00",
-      "total": "400.00"
+      "price": "200.00"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
@@ -180,13 +169,11 @@
     "list_items": [{
       "name": "Banner Design",
       "qty": 1,
-      "price": "156.00",
-      "total": "156.00"
+      "price": "156.00"
     },{
       "name": "Email Design",
       "qty": 2,
-      "price": "200.00",
-      "total": "400.00"
+      "price": "200.00"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
@@ -213,13 +200,15 @@
     "list_items": [{
       "name": "Banner Design",
       "qty": 1,
-      "price": "156.00",
-      "total": "156.00"
+      "price": "202.04"
     },{
       "name": "Email Design",
       "qty": 2,
-      "price": "200.00",
-      "total": "400.00"
+      "price": "200.00"
+    },{
+      "name": "Poster Design",
+      "qty": 5,
+      "price": "500.00"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
