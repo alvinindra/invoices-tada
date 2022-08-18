@@ -11,21 +11,23 @@
     </div>
     <div class="my-auto ml-auto flex">
       <div class="flex font-semibold my-auto text-sm">
-        <select
-          v-model="selectedFilter"
-          class="py-2 my-auto cursor-pointer bg-gray-100 dark:bg-black-secondary
+        <client-only>
+          <select
+            v-model="selectedFilter"
+            class="py-2 my-auto cursor-pointer bg-gray-100 dark:bg-black-secondary
           text-black-primary dark:text-white text-sm pr-4
           hover:outline rounded"
-          @change="handleFilter"
-        >
-          <option class="text-sm" value="" selected>
-            <span v-if="windowWidth < 768">Filter</span>
-            <span v-else>Filter by Status</span>
-          </option>
-          <option v-for="(option, index) in filterByStatusData" :key="index" class="text-sm" :value="option.value">
-            {{ option.label }}
-          </option>
-        </select>
+            @change="handleFilter"
+          >
+            <option class="text-sm" value="" selected>
+              <span v-if="windowWidth < 768">Filter</span>
+              <span v-else>Filter by Status</span>
+            </option>
+            <option v-for="(option, index) in filterByStatusData" :key="index" class="text-sm" :value="option.value">
+              {{ option.label }}
+            </option>
+          </select>
+        </client-only>
       </div>
       <div class="ml-4 md:ml-8">
         <BaseButton prefix @click="showModalAdd">

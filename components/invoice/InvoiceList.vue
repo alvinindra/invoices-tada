@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto md:ml-32 lg:mx-auto md:max-w-screen-sm lg:max-w-screen-md px-6 sm:px-12 md:px-6 lg:px-0 container pt-24 pb-24">
     <InvoiceListHeader class="mb-6 sm:mb-12 md:mb-16" />
-    <div class="flex flex-col">
+    <div v-if="filteredInvoices.length" class="flex flex-col">
       <InvoiceListCard v-for="invoice in filteredInvoices" :key="invoice.invoice_number" :invoice="invoice" />
     </div>
   </div>
