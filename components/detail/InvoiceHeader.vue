@@ -27,6 +27,7 @@ import { mapMutations, mapState } from 'vuex'
 
 export default {
   computed: {
+    ...mapState(['dark']),
     ...mapState('invoice', ['invoice'])
   },
   methods: {
@@ -38,11 +39,43 @@ export default {
       document.body.classList.add('modal-open')
     },
     handleDeleteInvoice () {
-      this.DELETE_INVOICE(this.invoice.invoice_number)
-      this.$router.push('/')
+      this.$Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        color: this.dark ? '#fff' : '#1f2937',
+        background: this.dark ? '#1F2937' : '#fff',
+        confirmButtonColor: '#DD4446',
+        cancelButtonColor: '#9fa0a8',
+        confirmButtonText: 'Yes'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.DELETE_INVOICE(this.invoice.invoice_number)
+          this.$Swal.fire({
+            title: 'Deleted!',
+            text: 'Invoice has been deleted successfully.',
+            icon: 'success',
+            color: this.dark ? '#fff' : '#1f2937',
+            background: this.dark ? '#1F2937' : '#fff',
+            confirmButtonColor: '#DD4446',
+            cancelButtonColor: '#9fa0a8'
+          })
+          this.$router.push('/')
+        }
+      })
     },
     handleUpdateStatus () {
       this.UPDATE_INVOICE_STATUS(this.invoice)
+      this.$Swal.fire({
+        title: 'Updated!',
+        text: 'Invoice has been updated successfully.',
+        icon: 'success',
+        color: this.dark ? '#fff' : '#1f2937',
+        background: this.dark ? '#1F2937' : '#fff',
+        confirmButtonColor: '#DD4446',
+        cancelButtonColor: '#9fa0a8'
+      })
     }
   }
 }

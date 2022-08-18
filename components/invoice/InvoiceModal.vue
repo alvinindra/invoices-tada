@@ -27,7 +27,7 @@
                 >
               </div>
 
-              <div class="flex gap-7">
+              <div class="flex gap-4 sm:gap-7">
                 <div>
                   <label for="city" class="form-label">City</label>
                   <input
@@ -100,7 +100,7 @@
                 required
               >
             </div>
-            <div class="flex gap-7">
+            <div class="flex gap-4 sm:gap-7">
               <div>
                 <label for="bill_to_city" class="form-label">City</label>
                 <input
@@ -137,7 +137,7 @@
             </div>
           </div>
           <div class="mb-12">
-            <div class="flex gap-7 mb-6">
+            <div class="flex gap-4 sm:gap-7 mb-6">
               <div class="flex-1">
                 <label for="bill_to_post_code" class="form-label">Invoice Date</label>
                 <input
@@ -196,7 +196,7 @@
               <div class="flex-[1_1_36%]">
                 <label for="bill_to_city" class="form-label">Item Name</label>
               </div>
-              <div class="flex-[1_1_4%]">
+              <div class="flex-[1_1_6%]">
                 <label for="bill_to_post_code" class="form-label">Qty.</label>
               </div>
               <div class="flex-[1_1_10%]">
@@ -207,7 +207,7 @@
               </div>
               <div class="flex-auto" />
             </div>
-            <div v-for="(list_items, itemsIndex) in formInvoice.list_items" :key="itemsIndex" class="flex gap-[14px] mb-4">
+            <div v-for="(list_items, itemsIndex) in formInvoice.list_items" :key="itemsIndex" class="flex gap-2 sm:gap-[14px] mb-4">
               <div class="flex-[1_1_36%]">
                 <input
                   id="item_name"
@@ -218,7 +218,7 @@
                   required
                 >
               </div>
-              <div class="flex-[1_1_4%]">
+              <div class="flex-[1_1_6%]">
                 <input
                   id="item_qty"
                   v-model.number="list_items.qty"
@@ -239,7 +239,7 @@
                 >
               </div>
               <div class="flex flex-[1_1_10%]">
-                <div class="my-auto dark:text-white">
+                <div class="text-xs xs:text-sm sm:text-base my-auto dark:text-white">
                   {{ list_items.price * list_items.qty }}
                 </div>
               </div>
@@ -261,7 +261,7 @@
           </div>
           <!-- Item List -->
         </div>
-        <div class="bg-gray-100 dark:bg-black-secondary text-right absolute bottom-16 md:bottom-0 right-0 px-14 py-8 w-full">
+        <div class="bg-gray-100 dark:bg-black-secondary text-right absolute bottom-16 md:bottom-0 right-0 px-6 sm:px-14 py-8 w-full">
           <BaseButton type="button" class="mr-2" color="secondary" wide @click="handleCloseModal">
             Close
           </BaseButton>
@@ -355,10 +355,28 @@ export default {
           return acc + (item.qty * item.price)
         }, 0)
         this.ADD_INVOICE(this.formInvoice)
+        this.$Swal.fire({
+          title: 'Added!',
+          text: 'Invoice has been added successfully.',
+          icon: 'success',
+          color: this.dark ? '#fff' : '#1f2937',
+          background: this.dark ? '#1F2937' : '#fff',
+          confirmButtonColor: '#DD4446',
+          cancelButtonColor: '#9fa0a8'
+        })
       } else {
         this.formInvoice.amount = this.formInvoice.list_items.reduce((acc, item) => {
           return acc + (item.qty * item.price)
         }, 0)
+        this.$Swal.fire({
+          title: 'Edited!',
+          text: 'Invoice has been edited successfully.',
+          icon: 'success',
+          color: this.dark ? '#fff' : '#1f2937',
+          background: this.dark ? '#1F2937' : '#fff',
+          confirmButtonColor: '#DD4446',
+          cancelButtonColor: '#9fa0a8'
+        })
         this.EDIT_INVOICE(this.formInvoice)
       }
     }
@@ -390,6 +408,17 @@ export default {
   &::-webkit-scrollbar-thumb:hover {
     background: #555;
     transition: all 0.3s linear;
+  }
+}
+
+@media (max-width: 376px) {
+  .form-body {
+    padding: 0 0 2rem 0;
+  }
+
+  .form-control {
+    padding: 16px 8px !important;
+    font-size: 12px !important;
   }
 }
 

@@ -10,7 +10,18 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
-      { name: 'theme-color', content: '#1a459c' }
+      { name: 'theme-color', content: '#1a459c' },
+      { name: 'og:title', content: 'Invoices TADA' },
+      {
+        name: 'og:image',
+        content: 'https://invoices-tada.vercel.app/thumbnail-card-web.jpg'
+      },
+      { name: 'twitter:title', content: 'Invoices TADA' },
+      {
+        name: 'twitter:description',
+        content: 'Create invoice with modern website NuxtJS'
+      },
+      { name: 'twitter:card', content: 'summary_large_image' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo.png' },
@@ -32,7 +43,12 @@ export default {
   css: ['@/assets/styles/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: '@/plugins/sweetalert2.js',
+      mode: 'client'
+    }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

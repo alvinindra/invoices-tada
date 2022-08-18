@@ -81,6 +81,10 @@
       "name": "Email Design",
       "qty": 2,
       "price": "200.00"
+    },{
+      "name": "Logo",
+      "qty": 1,
+      "price": "13446.33"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
@@ -105,13 +109,9 @@
     "payment_terms": "30",
     "project_description": "Graphic Designer",
     "list_items": [{
-      "name": "Banner Design",
-      "qty": 1,
-      "price": "156.00"
-    },{
       "name": "Email Design",
-      "qty": 2,
-      "price": "200.00"
+      "qty": 1,
+      "price": "102.04"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
@@ -136,13 +136,13 @@
     "payment_terms": "90",
     "project_description": "Graphic Designer",
     "list_items": [{
-      "name": "Banner Design",
+      "name": "Logo Design",
       "qty": 1,
-      "price": "156.00"
+      "price": "3532.33"
     },{
       "name": "Email Design",
       "qty": 2,
-      "price": "200.00"
+      "price": "250.00"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",
@@ -167,13 +167,13 @@
     "payment_terms": "90",
     "project_description": "Graphic Designer",
     "list_items": [{
-      "name": "Banner Design",
+      "name": "Logo Design",
       "qty": 1,
-      "price": "156.00"
+      "price": "6000.00"
     },{
       "name": "Email Design",
-      "qty": 2,
-      "price": "200.00"
+      "qty": 1,
+      "price": "155.91"
     }],
     "bill_from": {
       "street_address": "19 Union Terrace",

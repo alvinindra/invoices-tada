@@ -65,7 +65,7 @@
       <div class="text-xl font-medium dark:text-gray-300 mb-4">
         Item List
       </div>
-      <div class="bg-gray-200 dark:bg-black-tertiary rounded-t-lg p-8">
+      <div class="bg-gray-200 dark:bg-black-tertiary rounded-t-lg p-4 sm:p-8">
         <div class="flex dark:text-gray-300 justify-between text-sm mb-4">
           <div class="flex-[1_1_30%]">
             Item Name
@@ -95,11 +95,11 @@
           </div>
         </div>
       </div>
-      <div class="flex bg-gray-400 dark:bg-black-secondary rounded-b-lg py-7 px-8">
+      <div class="flex bg-gray-400 dark:bg-black-secondary rounded-b-lg py-4 sm:py-7 px-4 sm:px-8">
         <div class="my-auto dark:text-white font-medium text-xl">
           Total
         </div>
-        <div class="my-auto ml-auto dark:text-white text-xl">
+        <div class="my-auto ml-auto dark:text-white font-medium text-xl">
           {{ formatAmount(invoice.amount) }}
         </div>
       </div>
